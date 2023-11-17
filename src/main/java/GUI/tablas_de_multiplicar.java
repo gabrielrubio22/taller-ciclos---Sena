@@ -8,12 +8,12 @@ package Gui;
  *
  * @author SENA
  */
-public class Ejercicio_12_tablas_de_multiplicar extends javax.swing.JFrame {
+public class tablas_de_multiplicar extends javax.swing.JFrame {
 
     /**
      * Creates new form tablas_de_multiplicar
      */
-    public Ejercicio_12_tablas_de_multiplicar() {
+    public tablas_de_multiplicar() {
         initComponents();
     }
 
@@ -209,7 +209,7 @@ public class Ejercicio_12_tablas_de_multiplicar extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Ejercicio_12_tablas_de_multiplicar().setVisible(true);
+                new tablas_de_multiplicar().setVisible(true);
             }
         });
     }
