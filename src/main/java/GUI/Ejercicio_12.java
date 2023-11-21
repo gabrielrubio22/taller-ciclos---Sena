@@ -2,18 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Gui;
+package GUI;
 
 /**
  *
  * @author SENA
  */
-public class tablas_de_multiplicar extends javax.swing.JFrame {
+import javax.swing.*;
+
+public class Ejercicio_12 extends javax.swing.JFrame {
 
     /**
      * Creates new form tablas_de_multiplicar
      */
-    public tablas_de_multiplicar() {
+    public Ejercicio_12() {
         initComponents();
     }
 
@@ -48,7 +50,7 @@ public class tablas_de_multiplicar extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("Escriba un numero de seis digitos para calcular las tablas de multiplicar");
+        jLabel3.setText("Escriba un numero de seis digitos donde la primer pareja sea menor a la segunta pareja para calcular las tablas de multiplicar");
 
         txtResult.setColumns(20);
         txtResult.setRows(5);
@@ -74,12 +76,14 @@ public class tablas_de_multiplicar extends javax.swing.JFrame {
                                 .addComponent(txtNum, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(65, 65, 65)
                                 .addComponent(btnCalcular))
-                            .addComponent(jLabel3)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 573, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(286, 286, 286)
-                        .addComponent(jLabel4)))
-                .addContainerGap(48, Short.MAX_VALUE))
+                        .addComponent(jLabel4))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jLabel3)))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -120,40 +124,72 @@ public class tablas_de_multiplicar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
+        StringBuilder resultado = new StringBuilder();
         int numero = Integer.parseInt(txtNum.getText());
-        //int aux = numero;
+        int auxNum = numero;
+        int tablaMatriz [][];
         
         
         if (descomponerNumero( numero)) {
+                
+            int c = numero % 100; 
+            //System.out.println("\n" + c);
+            numero = numero / 100;
+
+            int b = numero % 100;
+            //System.out.println("\n" + b);
+            numero = numero / 100;
+
+            int a = numero % 100;
+            //System.out.println("\n" + a);
             
+            tablaMatriz = new int [a][b];
+
+            if (a < b){ 
+                
+                int baseColum = a - 1;
+                
+                for (int j = baseColum; j < tablaMatriz[0].length ; j ++){
+                    int base = j + 1;
+                    for (int i = 0; i < 10; i ++){
+                        tablaMatriz[i][j] = base * (i + 1);
+                    }
+                    
+                }
+                
+                for (int i = 0; i < 10; i ++){
+                    for (int j = baseColum; j < tablaMatriz[0].length; j++){
+                        resultado.append( (j + 1) + " * " + (i + 1) + " = " + tablaMatriz[i][j] + "\t\t");
+                    }
+                    resultado.append("\n");
+                }
+                txtResult.setText(resultado.toString());
+                
+            } else {
+                txtResult.setText("Escriba otro numero diferente donde la primer pareja de numeros sea " + "\n" 
+                                   + " menor a la segunda pareja de numeros ");
+            }
+            resultado.append("\nla union de la primer pareja a y la tercer pareja c es: " + a +"" +c);
+            txtResult.setText(resultado.toString());
+            int [] numArray = new int [6];
             
-                
-              int c = numero % 100; 
-              System.out.println("\n" + c);
-              numero = numero / 100;
-              
-              int b = numero % 100;
-              System.out.println("\n" + b);
-              numero = numero / 100;
-              
-              int a = numero % 100;
-              System.out.println("\n" + a);
-                        
-                   while (a <= b){ 
-                       
-                        for (int i = 1; i < 11 ; i ++){
-                            int tablaA = a*i ;
-                            txtResult.setText( txtResult.getText() + "\n" + a + " * " + i + " = " + tablaA + " \n ");
-                        }
-                        
-                        a = a + 1;
-                   }
-                
-                
+            for(int i =5; i >= 0; i--){
+                numArray[i] = auxNum % 10;
+                auxNum /=10; 
+            }
+            resultado.append("\nEl numero al inverso es : \n");
+            txtResult.setText(resultado.toString());
+            
+            for(int i = 5; i >= 0; i--){
+                resultado.append(numArray[i]);
+                txtResult.setText(resultado.toString());
+            }
             
         } else {
             txtResult.setText("Escribiste un numero equivocado debe ser de seis digitos ");
         }
+        
+        
                 
     }//GEN-LAST:event_btnCalcularActionPerformed
 
@@ -196,20 +232,23 @@ public class tablas_de_multiplicar extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(tablas_de_multiplicar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Ejercicio_12.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(tablas_de_multiplicar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Ejercicio_12.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(tablas_de_multiplicar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Ejercicio_12.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(tablas_de_multiplicar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Ejercicio_12.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new tablas_de_multiplicar().setVisible(true);
+                Ejercicio_12 panta = new Ejercicio_12();
+                    panta.setVisible(true);
+                    panta.setLocationRelativeTo(null);
             }
         });
     }

@@ -60,7 +60,6 @@
                                   <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                                   <Component id="btnCalcular" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                               <Component id="jScrollPane1" alignment="0" min="-2" pref="573" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -68,8 +67,12 @@
                           <EmptySpace min="-2" pref="286" max="-2" attributes="0"/>
                           <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace pref="48" max="32767" attributes="0"/>
+                  <EmptySpace pref="37" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -82,7 +85,7 @@
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="txtNum" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnCalcular" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -119,7 +122,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Escriba un numero de seis digitos para calcular las tablas de multiplicar"/>
+            <Property name="text" type="java.lang.String" value="Escriba un numero de seis digitos donde la primer pareja sea menor a la segunta pareja para calcular las tablas de multiplicar"/>
           </Properties>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
